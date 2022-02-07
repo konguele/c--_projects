@@ -1,4 +1,4 @@
-//Recorrido en InOrden en un árbol
+//Recorrido en PostOrden en un árbol
 
 #include<iostream>
 #include<stdio.h>
@@ -21,6 +21,7 @@ void mostrarArbol(Nodo *,int);
 bool busqueda(Nodo *,int);
 void preOrden(Nodo *);
 void inOrden(Nodo *);
+void postOrden(Nodo *);
 
 //Variables globales
 Nodo *arbol = NULL;
@@ -72,7 +73,8 @@ void menu(){ //Función de menú
         cout<<"3. Buscar un elemento en el árbol"<<endl;
         cout<<"4. Recorrer el árbol en PreOrden"<<endl;
         cout<<"5. Recorrer el árbol en InOrden"<<endl;
-        cout<<"6. Salir"<<endl;
+        cout<<"6. Recorrer el árbol en PostOrden"<<endl;
+        cout<<"7. Salir"<<endl;
         cout<<"Opción: "; cin>>opcion;
 
         switch(opcion){
@@ -102,8 +104,12 @@ void menu(){ //Función de menú
                     inOrden(arbol);
                     cout<<"\n\n";
                     break;
+            case 6: cout<<"\nRecorrido en PostOrden: ";
+            postOrden(arbol);
+            cout<<"\n\n";
+            break;
         }
-    }while(opcion != 6);
+    }while(opcion != 7);
 }
 
 void mostrarArbol(Nodo *arbol,int cont){ //Función para mostrar el árbol completo
@@ -154,5 +160,16 @@ void inOrden(Nodo *arbol){ //Función para recorrido en profundidad - In Orden
         inOrden(arbol->izq);
         cout<<arbol->dato<<" - ";
         inOrden(arbol->der);
+    }
+}
+
+void postOrden(Nodo *arbol){ //Función para recorrido en profundidad - Post Orden
+    if(arbol == NULL){
+        return;
+    }
+    else{
+        postOrden(arbol->izq);
+        postOrden(arbol->der);
+        cout<<arbol->dato<<" - ";
     }
 }
