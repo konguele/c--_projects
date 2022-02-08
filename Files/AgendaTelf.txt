@@ -1,0 +1,27 @@
+	Agenda Telefónica
+Nombre: Juanjo
+Apellidos: Garcia
+Teléfono: 123456789
+
+Nombre: Flor
+Apellidos: Verasategui
+Teléfono: 987654321
+
+
+Nombre: Rosa
+Apellidos: Machuque
+Teléfono: 897493839
+
+
+Nombre: Luis
+Apellidos: Pollo
+Teléfono: 374829374
+
+Nombre: Pepe
+Apellidos: Ramos
+Teléfono: 587493384
+
+Nombre: Salchicha
+Apellidos: Peleona
+Teléfono: 22334455
+
