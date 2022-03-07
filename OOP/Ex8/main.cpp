@@ -30,6 +30,45 @@ using namespace std;
 
 Persona* equipo[4];
 
+void viajarE(){
+    for(int i=0;i<4;i++){
+        cout<<equipo[i]->getNombre()<<" "<<equipo[i]->getApellido()<<" -> ";
+        equipo[i]->viajar();
+    }
+}
+
+void entrenamientoE(){
+    for(int i=0;i<4;i++){
+        cout<<equipo[i]->getNombre()<<" "<<equipo[i]->getApellido()<<" -> ";
+        equipo[i]->entrenamiento();
+    }
+}
+
+void partidoFutbolE(){
+    for(int i=0;i<4;i++){
+        cout<<equipo[i]->getNombre()<<" "<<equipo[i]->getApellido()<<" -> ";
+        equipo[i]->partidoFutbol();
+    }
+}
+
+void planificarEntrenamientoE(){
+    cout<<equipo[2]->getNombre()<<" "<<equipo[2]->getApellido()<<" -> ";
+    ((Entrenador *)equipo[2])->planificarEntrenamiento(); //DownCast, dejamos la clase base y volvemos a la derivada
+}
+
+void entrevistaE(){
+    cout<<equipo[0]->getNombre()<<" "<<equipo[0]->getApellido()<<" -> ";
+    ((Futbolista *)equipo[0])->entrevista(); //DownCast, dejamos la clase base y volvemos a la derivada
+    cout<<equipo[1]->getNombre()<<" "<<equipo[1]->getApellido()<<" -> ";
+    ((Futbolista *)equipo[1])->entrevista(); //DownCast, dejamos la clase base y volvemos a la derivada
+
+}
+
+void curarLesionE(){
+    cout<<equipo[3]->getNombre()<<" "<<equipo[3]->getApellido()<<" -> ";
+    ((Medico *)equipo[3])->curarLesion(); //DownCast, dejamos la clase base y volvemos a la derivada
+}
+
 void menu(){
     int opcion;
 
@@ -42,21 +81,27 @@ void menu(){
         cout<<"5. Entrevista"<<endl;
         cout<<"6. Curar una lesión"<<endl;
         cout<<"7. Salir"<<endl;
-        cout<<"Digita una opción: "; cin<<opcion;
+        cout<<"Digita una opción: "; cin>>opcion;
         cout<<endl;
 
         switch(opcion){
             case 1: //viaje en equipo
+                    viajarE();
                     break;
             case 2: //Entrenamiento
+                    entrenamientoE();
                     break;
             case 3: //Partido de futbol
+                    partidoFutbolE();
                     break;
             case 4: //Planificar entrenamiento
+                    planificarEntrenamientoE();
                     break;
             case 5: //Entrevista
+                    entrevistaE();
                     break;
             case 6: //Curar lesión
+                    curarLesionE();
                     break;
             case 7: break;
             default: cout<<"\nTe has equivocado de opción del menú"<<endl;

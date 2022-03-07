@@ -8,7 +8,7 @@ class Medico : public Persona{
         int expyears;
 
     public:
-        Medico(string nombre,string apellido,string edad,string titulo,int expyears) : Persona(nombre,apellido,edad){
+        Medico(string nombre,string apellido,int edad,string titulo,int expyears) : Persona(nombre,apellido,edad){
             this->titulo = titulo;
             this->expyears = expyears;
         }
